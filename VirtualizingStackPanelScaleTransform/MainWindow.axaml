@@ -5,5 +5,31 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="VirtualizingStackPanelScaleTransform.MainWindow"
         Title="VirtualizingStackPanelScaleTransform">
-    Welcome to Avalonia!
+  <StackPanel>
+    <StackPanel.Styles>
+      <Style Selector="ListBox">
+        <Style.Animations>
+          <Animation Duration="0:0:3" Easing="SineEaseInOut">
+            <KeyFrame Cue="0%">
+              <Setter Property="ScaleTransform.ScaleY" Value="0" />
+              <Setter Property="ScaleTransform.ScaleX" Value="0" />
+            </KeyFrame>
+            <KeyFrame Cue="100%">
+              <Setter Property="ScaleTransform.ScaleY" Value="1" />
+              <Setter Property="ScaleTransform.ScaleX" Value="1" />
+            </KeyFrame>
+          </Animation>
+        </Style.Animations>
+      </Style>
+    </StackPanel.Styles>
+    <ListBox>
+      <ListBoxItem>ListBox from the start</ListBoxItem>
+    </ListBox>
+    <ContentPresenter Name="ContentPresenter1">
+      <ContentPresenter.Content>
+        <TextBlock>New list box will appear here</TextBlock>
+      </ContentPresenter.Content>
+    </ContentPresenter>
+    <Button Content="Add new listbox" Click="Button_OnClick_AddNewListBox" />
+  </StackPanel>
 </Window>
