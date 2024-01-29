@@ -1,0 +1,25 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:keyIsObsolete="clr-namespace:KeyIsObsolete"
+             x:Class="KeyIsObsolete.App"
+             RequestedThemeVariant="Default">
+  <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+  <Application.Styles>
+    <Styles>
+      <FluentTheme />
+      <Styles.Resources>
+        <ResourceDictionary>
+          <ResourceDictionary.ThemeDictionaries>
+            <ResourceDictionary x:Key="{x:Static keyIsObsolete:Program.Test1}">
+              <Border x:Key="Test"></Border>
+            </ResourceDictionary>
+            <ResourceDictionary x:Key="{x:Static keyIsObsolete:Program.Test2}">
+              <Border x:Key="Test"></Border>
+            </ResourceDictionary>
+          </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+      </Styles.Resources>
+    </Styles>
+  </Application.Styles>
+</Application>
