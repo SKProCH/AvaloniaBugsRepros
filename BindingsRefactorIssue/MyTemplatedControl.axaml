@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:bindingsRefactorIssue="clr-namespace:BindingsRefactorIssue">
+    <ControlTheme x:Key="DynamicResourcedTheme" TargetType="bindingsRefactorIssue:MyTemplatedControl">
+        <Setter Property="MainBrush" Value="{DynamicResource MainBrushKey}"></Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Width="15" Height="15" Background="{TemplateBinding MainBrush}" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+    
+    <ControlTheme x:Key="MyExtensionBindingTheme" TargetType="bindingsRefactorIssue:MyTemplatedControl">
+        <Setter Property="MainBrush" Value="{bindingsRefactorIssue:ColoredBinding BrushName=MainBrushKey}"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Width="15" Height="15" Background="{TemplateBinding MainBrush}" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

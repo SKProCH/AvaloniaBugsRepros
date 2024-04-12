@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:bindingsRefactorIssue="clr-namespace:BindingsRefactorIssue"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="BindingsRefactorIssue.MainWindow"
+        Height="200" Width="300"
+        Title="BindingsRefactorIssue">
+    <Grid ColumnDefinitions="* * *" RowDefinitions="* * *">
+        <TextBlock Grid.Row="0" Grid.Column="1">DynamicResource</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2">My Binding</TextBlock>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0">App</TextBlock>
+        <bindingsRefactorIssue:MyTemplatedControl 
+            Grid.Row="1" Grid.Column="1"
+            Theme="{StaticResource DynamicResourcedTheme}"/>
+        <bindingsRefactorIssue:MyTemplatedControl 
+            Grid.Row="1" Grid.Column="2"
+            Theme="{StaticResource MyExtensionBindingTheme}"/>
+        
+        <TextBlock Grid.Row="2" Grid.Column="0">Overriden</TextBlock>
+        <bindingsRefactorIssue:MyTemplatedControl 
+            Grid.Row="2" Grid.Column="1"
+            Theme="{StaticResource DynamicResourcedTheme}">
+            <bindingsRefactorIssue:MyTemplatedControl.Resources>
+                <SolidColorBrush x:Key="MainBrushKey">Red</SolidColorBrush>
+            </bindingsRefactorIssue:MyTemplatedControl.Resources>
+        </bindingsRefactorIssue:MyTemplatedControl>
+        <bindingsRefactorIssue:MyTemplatedControl 
+            Grid.Row="2" Grid.Column="2"
+            Theme="{StaticResource MyExtensionBindingTheme}">
+            <bindingsRefactorIssue:MyTemplatedControl.Resources>
+                <SolidColorBrush x:Key="MainBrushKey">Red</SolidColorBrush>
+            </bindingsRefactorIssue:MyTemplatedControl.Resources>
+        </bindingsRefactorIssue:MyTemplatedControl>
+    </Grid>
+</Window>

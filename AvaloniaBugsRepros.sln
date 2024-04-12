@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedPropertyBindingRepr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyIsObsolete", "KeyIsObsolete\KeyIsObsolete.csproj", "{93937800-E9A6-4236-8D0B-A7A1273573D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingsRefactorIssue", "BindingsRefactorIssue\BindingsRefactorIssue.csproj", "{5650E273-BEF6-46E1-B9F3-BF8F446C4614}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{93937800-E9A6-4236-8D0B-A7A1273573D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93937800-E9A6-4236-8D0B-A7A1273573D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93937800-E9A6-4236-8D0B-A7A1273573D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5650E273-BEF6-46E1-B9F3-BF8F446C4614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5650E273-BEF6-46E1-B9F3-BF8F446C4614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5650E273-BEF6-46E1-B9F3-BF8F446C4614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5650E273-BEF6-46E1-B9F3-BF8F446C4614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
