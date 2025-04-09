@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:transitionsBug="clr-namespace:TransitionsBug"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TransitionsBug.MainWindow"
+        Title="TransitionsBug"
+        x:DataType="transitionsBug:MainWindowViewModel">
+    <Window.Styles>
+        <Style Selector="ProgressBar /template/ Border#PART_Indicator">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Width" Duration="0:0:0.25" />
+                    <DoubleTransition Property="Height" Duration="0:0:0.25" />
+                </Transitions>
+            </Setter>
+        </Style>
+    </Window.Styles>
+    <StackPanel>
+        <TextBlock Text="{Binding TestVM.Progress}"></TextBlock>
+        <ProgressBar x:Name="TestProgressBar" Value="{Binding TestVM.Progress}"
+                     Minimum="0"
+                     Maximum="100"
+                     Height="30" />
+        <TextBlock Text="{Binding #TestProgressBar.Percentage}"></TextBlock>
+    </StackPanel>
+</Window>
